@@ -1,5 +1,5 @@
 
-package test;
+package com.yuhaoLearn.java.javagrammar;
 
 import java.util.Date;
 import java.util.GregorianCalendar;

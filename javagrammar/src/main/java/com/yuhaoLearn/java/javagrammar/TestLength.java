@@ -1,5 +1,5 @@
 
-package test;
+package com.yuhaoLearn.java.javagrammar;
 
 public class TestLength {
 

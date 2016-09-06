@@ -8,6 +8,19 @@ public interface OurLinkList {
 	 */
 	public int add(Node node);
 	/**
+	 * 在第i个节点添加新的节点
+	 * @param node 待添加节点
+	 * @param i 插入的节点序号
+	 * @return 链表的新长度
+	 */
+	public int add(Node node, int i);
+	/**
+	 * 添加另一条链表
+	 * @param list 待添加的链表
+	 * @return 合并后的总长度
+	 */
+	public int add(OurLinkList list);
+	/**
 	 * 删除最后一个节点
 	 * @return 如果成功返回true，失败返回false
 	 */
@@ -29,5 +42,11 @@ public interface OurLinkList {
 	 * @return true 如果节点已经存在， false如果不存在
 	 */
 	public boolean exist(Node node);
+	/**
+	 * 
+	 * @return 一个链表的格式化字符串
+	 */
+	@Override
+	public String toString();
 	
 }

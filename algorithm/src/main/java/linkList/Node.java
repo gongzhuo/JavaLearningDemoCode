@@ -9,4 +9,13 @@ public class Node {
 	 * 下一个节点
 	 */
 	public Node next;
+	
+	public Node(int value){
+		this.value = value;
+	}
+	
+	@Override
+	public String toString(){
+		return "[" + value + "]" + "->";
+	}
 }

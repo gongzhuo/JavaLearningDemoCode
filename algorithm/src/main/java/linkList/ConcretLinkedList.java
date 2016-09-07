@@ -3,31 +3,26 @@ package linkList;
 public class ConcretLinkedList implements OurLinkList {
 
 	private Node head = null;
+	private int length = 0;
 
 	public int add(Node node) {
-		int length = 0;
 		if (head == null) {
 			head = node; // 增加一个节点
-			return length + 1; // 返回数组长度
+			return ++length; // 返回数组长度
 		}
 
-		Node current; // 节点当前值
-		if (head == null) {
-			return length; // 如果链表首为空，返回数组长度
-		}
-		length++;
-		current = head; // 将链表首赋给当前值
-		while (current.next != null) {
-			length++;
-			current = current.next;
-		}
-		current.next = node; // 增加节点
-		return length++; // 遍历链表，返回链表新长度
+		node.next = head;
+		head = node;
+		return ++length;
 	}
 
 	public boolean remove() {
-		// TODO Auto-generated method stub
-		return false;
+		if (head == null) {
+			return false;
+		}
+		head = head.next;
+		length--;
+		return true;
 	}
 
 	public boolean remove(int i) {
@@ -36,18 +31,7 @@ public class ConcretLinkedList implements OurLinkList {
 	}
 
 	public int count() {
-		int length = 0;
-		Node current;
-		if (head == null) {
-			return length; // 如果链表首为空，返回数组长度
-		}
-		length++;
-		current = head;
-		while (current.next != null) {
-			length++;
-			current = current.next;
-		}
-		return length; // 遍历链表，返回链表长度
+		return this.length; // 返回链表长度
 	}
 
 	public boolean exist(Node node) {

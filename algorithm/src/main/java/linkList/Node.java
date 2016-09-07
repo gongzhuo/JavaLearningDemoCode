@@ -10,8 +10,13 @@ public class Node {
 	 */
 	public Node next;
 	
+	public static int count = 0;
+	private final int id;
+	
 	public Node(int value){
 		this.value = value;
+		count++;
+		id = count;
 	}
 	
 	@Override

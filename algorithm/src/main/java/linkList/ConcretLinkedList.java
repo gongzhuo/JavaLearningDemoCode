@@ -26,8 +26,20 @@ public class ConcretLinkedList implements OurLinkList {
 	}
 
 	public boolean remove(int i) {
-		// TODO Auto-generated method stub
-		return false;
+		if (i <= 0 || i > length) {
+			return false;
+		}
+		Node p = head;
+		int j = 0;
+		while (j < i) {
+			p = p.next;
+			++j;
+		}
+		Node temp = p.next;
+		p.next = temp.next;
+		length--;
+		return true;
+
 	}
 
 	public int count() {
@@ -45,8 +57,20 @@ public class ConcretLinkedList implements OurLinkList {
 	}
 
 	public int add(Node node, int i) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (i <= 0 || i > length) {
+			return -1;
+		}
+		Node p = head;
+		int j = 0;
+		while (j < i) {
+			p = p.next;
+			++j;
+		}
+		Node temp = node;
+		temp.next = p.next;
+		p.next = temp;
+		length++;
+		return 1;
 	}
 
 	@Override

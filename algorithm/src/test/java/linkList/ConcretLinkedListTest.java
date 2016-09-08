@@ -19,12 +19,6 @@ public class ConcretLinkedListTest {
 		assertTrue(demo.count() == 8);
 		System.out.println(demo);
 
-		// System.out.println(" ");
-		// for (int j = 0; j < 8; j++) {
-		// demo.remove();
-		// System.out.println(demo + " length = " + demo.count());
-		// }
-
 		System.out.println(" ");
 		demo.remove(4);
 		System.out.println(demo + " length = " + demo.count());
@@ -32,6 +26,12 @@ public class ConcretLinkedListTest {
 		System.out.println(" ");
 		demo.add(new Node(9), 3);
 		System.out.println(demo + " length = " + demo.count());
+
+		System.out.println(" ");
+		for (int j = 0; j < 8; j++) {
+			demo.remove();
+			System.out.println(demo + " length = " + demo.count());
+		}
 	}
 
 }

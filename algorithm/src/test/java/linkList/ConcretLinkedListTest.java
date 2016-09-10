@@ -1,7 +1,5 @@
 package linkList;
 
-import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 public class ConcretLinkedListTest {
@@ -19,19 +17,33 @@ public class ConcretLinkedListTest {
 		assertTrue(demo.count() == 8);
 		System.out.println(demo);
 
-		System.out.println(" ");
-		demo.remove(4);
+		System.out.println();
+		demo.add(new Node(9), 5);
 		System.out.println(demo + " length = " + demo.count());
 
-		System.out.println(" ");
-		demo.add(new Node(9), 3);
+		System.out.println();
+		assertTrue(demo.exist(new Node(5)) == true);
+		assertTrue(demo.exist(new Node(11)) == false);
+		System.out.println(demo.exist(new Node(5)));
+		System.out.println(demo.exist(new Node(11)));
+
+		System.out.println();
+		demo.remove(3);
 		System.out.println(demo + " length = " + demo.count());
 
-		System.out.println(" ");
+		System.out.println();
 		for (int j = 0; j < 8; j++) {
 			demo.remove();
 			System.out.println(demo + " length = " + demo.count());
 		}
+	}
+
+	private void assertTrue(boolean b) {
+
+	}
+
+	private void assertTrue(int add) {
+
 	}
 
 }

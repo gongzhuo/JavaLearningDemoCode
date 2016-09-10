@@ -30,13 +30,12 @@ public class ConcretLinkedList implements OurLinkList {
 			return false;
 		}
 		Node p = head;
-		int j = 0;
-		while (j < i) {
+		int j = 1;
+		while (j < i - 1) {
 			p = p.next;
 			++j;
 		}
-		Node temp = p.next;
-		p.next = temp.next;
+		p.next = p.next.next;
 		length--;
 		return true;
 
@@ -47,13 +46,33 @@ public class ConcretLinkedList implements OurLinkList {
 	}
 
 	public boolean exist(Node node) {
-		// TODO Auto-generated method stub
+		Node p = head;
+		int j = 1;
+		while (j < length) {
+			p = p.next;
+			++j;
+		}
+		if (p.value == node.value) {
+			return true;
+		}
 		return false;
 	}
 
 	public int add(OurLinkList list) {
-		// TODO Auto-generated method stub
-		return 0;
+		ConcretLinkedList a = new ConcretLinkedList();
+		ConcretLinkedList b = new ConcretLinkedList();
+		if (a.head == null) {
+			a.head = b.head;
+		}
+
+		int i = 1;
+		while (i <= length) {
+			a.head = a.head.next;
+			i++;
+		}
+		a.head.next = b.head;
+		length += b.length;
+		return 1;
 	}
 
 	public int add(Node node, int i) {
@@ -61,8 +80,8 @@ public class ConcretLinkedList implements OurLinkList {
 			return -1;
 		}
 		Node p = head;
-		int j = 0;
-		while (j < i) {
+		int j = 1;
+		while (j < i - 1) {
 			p = p.next;
 			++j;
 		}

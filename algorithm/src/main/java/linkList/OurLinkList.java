@@ -1,6 +1,7 @@
 package linkList;
 
 public interface OurLinkList {
+
 	/**
 	 * 增加一个节点
 	 * 

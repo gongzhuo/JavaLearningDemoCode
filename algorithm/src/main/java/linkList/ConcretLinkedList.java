@@ -47,32 +47,33 @@ public class ConcretLinkedList implements OurLinkList {
 
 	public boolean exist(Node node) {
 		Node p = head;
-		int j = 1;
+		int j = 0;
 		while (j < length) {
+			if (p.value == node.value) {
+				return true;
+			}
 			p = p.next;
 			++j;
 		}
-		if (p.value == node.value) {
-			return true;
-		}
+
 		return false;
 	}
 
-	public int add(OurLinkList list) {
-		ConcretLinkedList a = new ConcretLinkedList();
-		ConcretLinkedList b = new ConcretLinkedList();
-		if (a.head == null) {
-			a.head = b.head;
+	public int add(ConcretLinkedList list) {
+
+		if (head == null) {
+			head = list.head;
+			return list.length;
 		}
 
+		Node p = head;
 		int i = 1;
-		while (i <= length) {
-			a.head = a.head.next;
+		while (i < length) {
+			p = p.next;
 			i++;
 		}
-		a.head.next = b.head;
-		length += b.length;
-		return 1;
+		p.next = list.head;
+		return length += list.length;
 	}
 
 	public int add(Node node, int i) {

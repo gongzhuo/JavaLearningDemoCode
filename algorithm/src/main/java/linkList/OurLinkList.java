@@ -29,7 +29,7 @@ public interface OurLinkList {
 	 *            待添加的链表
 	 * @return 合并后的总长度
 	 */
-	public int add(OurLinkList list);
+	public int add(ConcretLinkedList list);
 
 	/**
 	 * 删除第一个节点
